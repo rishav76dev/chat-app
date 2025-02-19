@@ -21,6 +21,6 @@ app.use(cookiesParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/message", messageRoutes);
 
-app.listen(5000,() => {
+app.listen(5001,() => {
     console.log("server is running at 5001")
 });
