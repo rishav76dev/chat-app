@@ -12,16 +12,17 @@ import { useAuthStore } from './store/useAuthStore'
 
 
 import { Loader } from "lucide-react";
+import { Toaster } from 'react-hot-toast'
 
 
 const App = () => {
 
-  const { authUser,checkAuth } = useAuthStore()
+  const { authUser,checkAuth,isCheckingAuth } = useAuthStore()
 
-  const [isCheckingAuth, setIsCheckingAuth] = useState(true)
+  
 
   useEffect(() =>{
-    checkAuth()
+    checkAuth();
   }, [checkAuth]);
 
   console.log({authUser});
@@ -44,6 +45,8 @@ const App = () => {
         <Route path="/settings" element={authUser ? <SettingsPage /> : <Navigate to="/login" />} />
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
+
+      <Toaster />
 
 
 
