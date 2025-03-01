@@ -20,6 +20,7 @@ const MessageInput = () => {
       setText("");
     } catch (error) {
       console.error("Failed to send message:", error);
+      toast.error("Failed to send message. Please try again.");
     }
   };
 
